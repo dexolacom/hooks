@@ -1,0 +1,24 @@
+{
+  "name": "tech-mask-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techbandorg/hooks.git"
+  },
+  "author": "happy_cutman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techbandorg/hooks/issues"
+  },
+  "homepage": "https://github.com/techbandorg/hooks#readme",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}
