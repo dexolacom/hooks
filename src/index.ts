@@ -1,6 +1,6 @@
 import abi from './logicAbi.json'
 
-export const networkSwitcher = async (chainId: number, web3: any) => {
+export const networkSwitcher = async (web3: any, chainId: number) => {
   const hexChainId = `0x${chainId.toString(16)}`
   try {
     // @ts-ignore
