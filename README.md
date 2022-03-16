@@ -21,7 +21,7 @@ addTokenToMetamask(web3, '0xae13d989dac2f0debff460ac112a837c89baa7cd', 'BNB', 18
 
 `networkSwitcher(web3, chainId: number)`
 ```
-networkSwitcher(web3, '56')
+networkSwitcher(web3, 56)
 ```
 ### General functions:
 
