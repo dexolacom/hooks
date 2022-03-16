@@ -13,7 +13,8 @@ General functions:
 ## Usage
 ### Metamask functions:
 
-`addTokenToMetamask(web3: any, tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number)` tokenSymbol and tokenDecimals is optional parameters
+`addTokenToMetamask(web3: any, tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number)`
+tokenSymbol and tokenDecimals is optional parameters
 ```
 addTokenToMetamask(web3, '0xae13d989dac2f0debff460ac112a837c89baa7cd', 'BNB', 18)
 ```
