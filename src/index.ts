@@ -2,6 +2,13 @@
 import React from 'react'
 import abi from './logicAbi.json'
 
+export const removeEFromNumber = (number: number) => {
+  if (Math.abs(number) < 1) {
+    return number.toLocaleString('fullwide', { useGrouping: false, minimumFractionDigits: 18 })
+  }
+  return number.toLocaleString('fullwide', {useGrouping: false})
+};
+
 const stringTrim = (string:string, maxLength:number) => {
   if (!string) return string;
   if (maxLength < 1) return string;
