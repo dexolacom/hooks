@@ -22,27 +22,6 @@ const stringTrim = (string:string, maxLength:number) => {
   return `${string.substring(0, midpoint - leftStrip)}...${string.substring(midpoint + rightStrip)}`
 }
 
-export const numericInputValidator = (e: React.ChangeEvent<HTMLInputElement>, inputId: string) => {
-  const userInput = e.target.value
-  // @ts-ignore
-  const input: HTMLInputElement = document.getElementById(inputId)
-
-  if (userInput.charAt(1) === '0') {
-    input.value = '0'
-  }
-  if (userInput.charAt(0) === '.') {
-    input.value = ''
-  }
-  input.value = input.value.replace(/[^0-9\.]/g,'');
-  input.addEventListener("blur", () => {
-    input.value = stringTrim(userInput, 10);
-  });
-  input.addEventListener("focus", () => {
-    input.value = userInput
-  })
-};
-
-
 export const networkSwitcher = async (web3: any, chainId: number) => {
   const hexChainId = `0x${chainId.toString(16)}`
   try {
