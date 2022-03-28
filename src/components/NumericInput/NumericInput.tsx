@@ -3,7 +3,7 @@ import React from 'react';
 import {InputWrapper, StyledInput, MaxButton} from './styles';
 import {NumericInputProps} from '../types';
 
-const NumericInput = ({
+export const NumericInput = ({
     value,
     onUserInput,
     placeholder,
@@ -75,5 +75,3 @@ const NumericInput = ({
     </InputWrapper>
   );
 };
-
-export default NumericInput;

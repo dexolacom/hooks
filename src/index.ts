@@ -1,6 +1,7 @@
 // @ts-ignore
 import React from 'react'
 import abi from './logicAbi.json'
+export { NumericInput } from './components/NumericInput/NumericInput'
 
 export const removeEFromNumber = (number: number) => {
   if (Math.abs(number) < 1) {
