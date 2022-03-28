@@ -3,9 +3,11 @@ Metamask extension functions:
 - networkSwitcher
 - addTokenToMetamask
 
-General functions:
-- numericInputValidator
+Common functions:
 - removeEFromNumber
+
+Components:
+- NumericInput
 
 ## Installation
 `npm i tech-mask-utils` or `yarn add tech-mask-utils`
@@ -23,16 +25,40 @@ addTokenToMetamask(web3, '0xae13d989dac2f0debff460ac112a837c89baa7cd', 'BNB', 18
 ```
 networkSwitcher(web3, 56)
 ```
-### General functions:
-
-`numericInputValidator(e: React.ChangeEvent<HTMLInputElement>, inputId: string)`
-```
-const Component = () => {
-  return <input type='text' id={'inputId'} onChange={(e) => numericInputValidator(e, 'inputId')}/>
-};
-```
+### Common functions:
 
 `removeEFromNumber(number: number)`
 ```
 removeEFromNumber(0.2323e+18) => '232300000000000000'
+```
+
+### Components:
+
+`<NumericInput value={value} onUserInput={setValue}/>`
+
+If `onMax` is passed to props, the component will render the max button
+
+#####Prop types
+
+```
+  value: string | number
+  onUserInput: (input: string) => void
+  placeholder?: string
+  onMax?: () => void
+  inputPadding?: string
+  inputWidth?: string
+  inputBackground?: string
+  inputBorderRadius?: string
+  inputFontSize?: string
+  inputFontColor?: string
+  inputFontWeight?: string
+  placeholderColor?: string
+  inputTextAlign?: string
+  buttonBackground?: string
+  buttonTextColor?: string
+  buttonFontSize?: string
+  buttonFontWeight?: string
+  buttonPadding?: string
+  buttonBorder?: string
+
 ```
