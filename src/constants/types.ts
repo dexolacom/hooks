@@ -20,3 +20,24 @@ export interface NumericInputProps {
   buttonPadding?: string
   buttonBorder?: string
 }
+
+export interface TContractObject {
+  usdt?: string
+  busd?: string
+  fusdt?: string
+}
+
+export type TAbi = {
+  usdt?: any
+  busd?: any
+  fusdt?: any
+}
+
+export enum EChainId {
+  MAIN_ETH = 1,
+  ROPSTEN = 3,
+  MAIN_BSC = 56,
+  TEST_BSC = 97,
+  MAIN_FTM = 250,
+  TEST_FTM = 4002
+}

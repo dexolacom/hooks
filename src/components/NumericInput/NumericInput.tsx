@@ -1,7 +1,7 @@
 // @ts-ignore
 import React from 'react';
 import {InputWrapper, StyledInput, MaxButton} from './styles';
-import {NumericInputProps} from '../types';
+import {NumericInputProps} from '../../constants/types';
 
 export const NumericInput = ({
     value,
