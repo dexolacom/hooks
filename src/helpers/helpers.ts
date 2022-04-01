@@ -12,3 +12,10 @@ export const getContractValue = (contractName: string, chainId?: number) => {
   return tokensInfo[chainId][contractName]?.address ??
     console.error('Address for this token is not exist. Make sure you are using the correct network')
 }
+
+export const addNewTokenInfo = (address: string, name: string, abi: any, chainId?: number) => {
+  // @ts-ignore
+  const obj = tokensInfo[chainId]
+  const newObj = {[`${name}`]: {address, name, abi}}
+  Object.assign(obj, newObj)
+};
