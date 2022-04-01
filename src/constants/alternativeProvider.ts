@@ -1,30 +1,18 @@
 import { networks } from './networks'
 // @ts-ignore
 import Web3 from 'web3'
-import { EChainId } from './types'
+import {ChainId} from './contracts';
 
 export const getAlternativeProvider = (chainId: number) => {
-  let provider
-
-  switch (chainId) {
-    case EChainId.TEST_BSC:
-      provider = networks.bsc_test
-      break
-    case EChainId.MAIN_BSC:
-      provider = networks.bsc_main
-      break
-    case EChainId.MAIN_ETH:
-      provider = networks.eth_main
-      break
-    case EChainId.ROPSTEN:
-      provider = networks.eth_test
-      break
-    case EChainId.MAIN_FTM:
-      provider = networks.ftm_main
-      break
-    default:
-      provider = Web3.givenProvider
-      break
+  const providers = {
+    [ChainId.MAIN_ETH]: networks.MAIN_ETH,
+    [ChainId.ROPSTEN]: networks.ROPSTEN,
+    [ChainId.MAIN_BSC]: networks.MAIN_BSC,
+    [ChainId.TEST_BSC]: networks.TEST_BSC,
+    [ChainId.MAIN_FTM]: networks.MAIN_FTM,
+    [ChainId.TEST_FTM]: networks.TEST_FTM,
   }
-  return provider
+
+  // @ts-ignore
+  return providers[chainId] ?? Web3.givenProvider
 }

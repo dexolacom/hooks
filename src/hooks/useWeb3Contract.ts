@@ -2,12 +2,10 @@
 import {useEffect, useState} from 'react'
 // @ts-ignore
 import Web3 from 'web3'
-import {TContractObject} from '../constants/types';
+import {getAlternativeProvider} from '../constants/alternativeProvider'
 import {getChainId, getContractValue} from '../helpers/helpers';
-import {getAlternativeProvider} from '../constants/alternativeProvider';
-import {abiBSC, abiETH, abiFTM} from '../constants/abis/abis';
+import { tokensInfo } from '../constants/contracts';
 
-// eslint-disable-next-line react/prop-types
 export const useWeb3Contract = () => {
   const [web3, setWeb3] = useState<any>()
   const [chainId, setChainId] = useState<number>()
@@ -24,16 +22,11 @@ export const useWeb3Contract = () => {
     }
   }, [chainId])
 
-  const getContract = (contract: string) => {
+  const getContract = (contractName: string) => {
     if (!web3) return null
-    const contractValue = getContractValue(contract, chainId)
-    const contractAbis = {
-      usdt: abiETH.usdt,
-      busd: abiBSC.busd,
-      fusdt: abiFTM.fusdt
-    }
-
-    const abiValue = contractAbis[contract as keyof TContractObject]
+    const contractValue = getContractValue(contractName, chainId)
+    // @ts-ignore
+    const abiValue = tokensInfo[chainId][contractName]?.abi
     if (!contractValue) return null
     return new web3.eth.Contract(abiValue, contractValue)
   }
