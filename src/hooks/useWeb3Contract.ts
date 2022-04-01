@@ -8,7 +8,7 @@ import {getAlternativeProvider} from '../constants/alternativeProvider';
 import {abiBSC, abiETH, abiFTM} from '../constants/abis/abis';
 
 // eslint-disable-next-line react/prop-types
-export const useWeb3ContractProvider = () => {
+export const useWeb3Contract = () => {
   const [web3, setWeb3] = useState<any>()
   const [chainId, setChainId] = useState<number>()
 
