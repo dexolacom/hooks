@@ -1,9 +1,9 @@
 export declare const networks: {
-    eth_main: string;
-    eth_test: string;
-    bsc_main: string;
-    bsc_test: string;
-    ftm_main: string;
-    ftm_test: string;
+    MAIN_ETH: string;
+    ROPSTEN: string;
+    MAIN_BSC: string;
+    TEST_BSC: string;
+    MAIN_FTM: string;
+    TEST_FTM: string;
 };
 //# sourceMappingURL=networks.d.ts.map
