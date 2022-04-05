@@ -80,7 +80,7 @@ Returns chainId, web3 object with current provider and getContract() function
 The argument object should be as in the example:
 
 ```
-export const tokensInfo = {
+export const tokensInfoObject = {
   1: {
     USDT: {
       address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
