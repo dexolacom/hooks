@@ -1,1 +1,1 @@
-{"version":3,"file":"alternativeProvider.d.ts","sourceRoot":"","sources":["../../src/constants/alternativeProvider.ts"],"names":[],"mappings":"AAKA,eAAO,MAAM,sBAAsB,YAAa,MAAM,QAYrD,CAAA"}
+{"version":3,"file":"alternativeProvider.d.ts","sourceRoot":"","sources":["../../src/constants/alternativeProvider.ts"],"names":[],"mappings":"AAYA,eAAO,MAAM,QAAQ;;;;;;;CAOpB,CAAA;AAED,eAAO,MAAM,sBAAsB,YAAa,MAAM,QAYrD,CAAA"}
