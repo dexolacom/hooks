@@ -4,9 +4,8 @@ import {useEffect, useState} from 'react'
 import Web3 from 'web3'
 import {getAlternativeProvider} from '../constants/alternativeProvider'
 import {getChainId, getContractValue} from '../helpers/helpers';
-import { tokensInfo } from '../constants/contracts';
 
-export const useWeb3Contract = () => {
+export const useWeb3Contract = (tokensInfo: any) => {
   const [web3, setWeb3] = useState<any>()
   const [chainId, setChainId] = useState<number>()
 
@@ -24,7 +23,7 @@ export const useWeb3Contract = () => {
 
   const getContract = (contractName: string) => {
     if (!web3) return null
-    const contractValue = getContractValue(contractName, chainId)
+    const contractValue = getContractValue(contractName, tokensInfo, chainId)
     // @ts-ignore
     const abiValue = tokensInfo[chainId][contractName]?.abi
     if (!contractValue) return null

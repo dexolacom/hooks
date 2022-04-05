@@ -73,16 +73,37 @@ buttonBorder?: string
 
 ### Hooks:
 
-`useWeb3Contract()`
+`useWeb3Contract(tokensInfoObject)`
 
 Returns chainId, web3 object with current provider and getContract() function
 
+The argument object should be as in the example:
+
 ```
-const {chainId, web3, getContract} = useWeb3Contract()
+export const tokensInfo = {
+  1: {
+    USDT: {
+      address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+      name: 'USDT',
+      abi: usdtAbi
+    }
+  },
+  56: {
+    BUSD: {
+      address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+      name: 'BUSD',
+      abi: busdAbi
+    }
+  }
+}
+```
+Hook call
+```
+const {chainId, web3, getContract} = useWeb3Contract(tokensInfoObject)
 ```
 
 `getContract(contractName: string)`
-takes as its argument the name of the contract to be returned
+takes as its argument the name of the contract in uppercase to be returned
 
 ```
 getContract('USDT') or getContract('BUSD')
