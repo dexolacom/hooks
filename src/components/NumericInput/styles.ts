@@ -15,20 +15,12 @@ export const InputWrapper = styled.div<{
   padding: ${({ inputPadding }) => inputPadding ?? '5px'};
 `
 
-export const StyledInput = styled.input<{
-  inputFontSize?: string
-  inputFontColor?: string
-  inputFontWeight?: string
-  placeholderColor?: string
-  inputTextAlign?: string
-}>`
+export const StyledInput = styled.input`
   background: transparent;
-  //padding-left: 10px;
-  color: ${({ inputFontColor }) => (inputFontColor ?? '#fff')};
-  font-weight: ${({ inputFontWeight }) => inputFontWeight ?? '500'};
-  font-size: ${({ inputFontSize }) => inputFontSize ?? '18px'};
-  text-align: ${({ inputTextAlign }) => inputTextAlign ?? 'left'};
-  //position: relative;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: left;
   outline: none;
   border: none;
   flex: 1 1 auto;
@@ -55,21 +47,14 @@ export const StyledInput = styled.input<{
   }
 `
 
-export const MaxButton = styled.button<{
-  buttonBackground?: string
-  buttonTextColor?: string
-  buttonFontSize?: string
-  buttonFontWeight?: string
-  buttonPadding?: string
-  buttonBorder?: string
-}>`
-  color: ${({ buttonTextColor }) => (buttonTextColor ?? '#fff')};
-  background: ${({ buttonBackground }) => buttonBackground ?? 'transparent'};
-  padding: ${({ buttonPadding }) => buttonPadding ?? '0'};
-  font-size: ${({ buttonFontSize }) => buttonFontSize ?? '18px'};
-  font-weight: ${({ buttonFontWeight }) => buttonFontWeight ?? '500'};
+export const MaxButton = styled.button`
+  color: #fff;
+  background: transparent;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
   cursor: pointer;
   text-align: center;
-  border: ${({buttonBorder}) => buttonBorder ?? 'none'};
+  border: none;
   
 `

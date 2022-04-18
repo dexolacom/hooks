@@ -1,4 +1,5 @@
 export { NumericInput } from './components/NumericInput/NumericInput'
+export { InputButton } from './components/NumericInput/NumericInput'
 export { useWeb3Contract } from './hooks/useWeb3Contract'
 export { removeEFromNumber } from './metamask/metamask'
 export { networkSwitcher } from './metamask/metamask'

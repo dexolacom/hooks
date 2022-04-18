@@ -20,3 +20,7 @@ export interface NumericInputProps {
   buttonPadding?: string
   buttonBorder?: string
 }
+
+export type InputButtonProps = {
+  onMax: () => void;
+}

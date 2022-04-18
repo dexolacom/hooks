@@ -1,7 +1,7 @@
 // @ts-ignore
 import React from 'react';
 import {InputWrapper, StyledInput, MaxButton} from './styles';
-import {NumericInputProps} from '../../constants/types';
+import {NumericInputProps, InputButtonProps} from '../../constants/types';
 
 export const NumericInput = ({
     value,
@@ -11,19 +11,8 @@ export const NumericInput = ({
     // style props
     inputBackground,
     inputBorderRadius,
-    inputFontSize,
-    inputFontColor,
-    inputFontWeight,
-    placeholderColor,
     inputWidth,
     inputPadding,
-    inputTextAlign,
-    buttonBackground,
-    buttonTextColor,
-    buttonFontSize,
-    buttonFontWeight,
-    buttonPadding,
-    buttonBorder
   }: NumericInputProps & Omit<React.HTMLProps<HTMLInputElement>, 'ref' | 'onChange' | 'as'>) => {
 
   const inputValidator = (nextUserInput: string) => {
@@ -52,26 +41,17 @@ export const NumericInput = ({
         minLength={1}
         maxLength={16}
         spellCheck="false"
-        // styling props
-        inputFontSize={inputFontColor ?? inputFontColor}
-        inputFontColor={inputFontSize ?? inputFontSize}
-        inputFontWeight={inputFontWeight ?? inputFontWeight}
-        placeholderColor={placeholderColor ?? placeholderColor}
-        inputTextAlign={inputTextAlign ?? inputTextAlign}
       />
       {onMax && (
-        <MaxButton
-          onClick={onMax}
-          buttonBackground={buttonBackground ?? buttonBackground}
-          buttonPadding={buttonPadding ?? buttonPadding}
-          buttonFontSize={buttonFontSize ?? buttonFontSize}
-          buttonTextColor={buttonTextColor ?? buttonTextColor}
-          buttonFontWeight={buttonFontWeight ?? buttonFontWeight}
-          buttonBorder={buttonBorder ?? buttonBorder}
-        >
-          Max
-        </MaxButton>
+        <InputButton onMax={onMax}/>
       )}
     </InputWrapper>
   );
+};
+
+
+export const InputButton = ({onMax}: InputButtonProps) => {
+  return (
+    <MaxButton onClick={onMax}>Max</MaxButton>
+  )
 };
