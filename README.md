@@ -41,6 +41,10 @@ removeEFromNumber(0.2323e+18) => '232300000000000000'
 addNweTokenInfo('0x0453hj80...', 'USDT', usdtAbi, 1)
 ```
 
+`createNewWallet()` creates new web3 account and returns publicAddress and privateKey
+```
+  const {publicAddress, privateKey} = createNewWallet()
+```
 ### Components:
 
 `<NumericInput value={value} onUserInput={setValue}/>`
