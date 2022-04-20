@@ -1,5 +1,21 @@
 // @ts-ignore
 import Web3 from 'web3'
+import {getAlternativeProvider } from '../constants/alternativeProvider';
+
+export const createNewWallet = (chainId:number) => {
+  try {
+    const web3 = new Web3(Web3.givenProvider || getAlternativeProvider(chainId))
+    const account = web3.eth.accounts.create();
+    if (!account) return console.error("Error creating wallet!")
+    return {
+      publicAddress: account.address,
+      privateKey: account.privateKey,
+    }
+  } catch (error) {
+    console.log("error:", error);
+    return null;
+  }
+};
 
 export const getChainId = async () => {
   const web3 = new Web3(Web3.givenProvider)
