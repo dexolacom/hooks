@@ -19,6 +19,8 @@ Hooks:
 
 ## Usage
 
+To export the newly created function, you must write in index.ts:
+`export {yourFunc} from '../../..'`
 
 ### Metamask functions:
 
