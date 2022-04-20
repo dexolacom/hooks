@@ -6,6 +6,7 @@ Metamask extension functions:
 Common functions:
 - removeEFromNumber
 - addNewTokenInfo
+- createNewWallet
 
 Components:
 - NumericInput
@@ -17,6 +18,8 @@ Hooks:
 `npm i tech-mask-utils` or `yarn add tech-mask-utils`
 
 ## Usage
+
+
 ### Metamask functions:
 
 `addTokenToMetamask(web3: any, tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number)`
