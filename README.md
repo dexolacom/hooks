@@ -1,155 +1,70 @@
-## About
-Metamask extension functions:
-- networkSwitcher
-- addTokenToMetamask
+# Getting Started with Create React App
 
-Common functions:
-- removeEFromNumber
-- addNewTokenInfo
-- createNewWallet
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Components:
-- NumericInput
+## Available Scripts
 
-Hooks:
-- useWeb3Contract
+In the project directory, you can run:
 
-## Installation
-`npm i tech-mask-utils` or `yarn add tech-mask-utils`
+### `yarn start`
 
-## Usage
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-To export the newly created function, you must write in index.ts:
-`export {yourFunc} from '../../..'`
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-To import some function or component:
-`import {} from 'tech-mask-utils'`
+### `yarn test`
 
-### Metamask functions:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-* `addTokenToMetamask(web3: any, tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number)`
-tokenSymbol and tokenDecimals is optional parameters
-```
-addTokenToMetamask(web3, '0xae13d989dac2f0debff460ac112a837c89baa7cd', 'BNB', 18)
-```
+### `yarn build`
 
-* `networkSwitcher(web3, chainId: number)`
-```
-networkSwitcher(web3, 56)
-```
-### Common functions:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-* `removeEFromNumber(number: number)`
-```
-removeEFromNumber(0.2323e+18) => '232300000000000000'
-```
-* `addNewTokenInfo(tokenAddress: string, tokenName: string, abi: any, chainId: number)`
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```
-addNweTokenInfo('0x0453hj80...', 'USDT', usdtAbi, 1)
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-* `createNewWallet()` creates new web3 account and returns publicAddress and privateKey
-```
-const {publicAddress, privateKey} = createNewWallet()
-```
+### `yarn eject`
 
-* `setStyles(styles: object)` uses for set styles to component. In example below this function set styles for input max button
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```
-const styles = {
-  inputMaxButton: {
-    background: '#fff',
-    'border-radius': '20px'
-  },
-  'inputMaxButton:hover': {
-    background: '#000'
-  }
-}
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-setStyles(styles)
-```
-### Components:
-* `<NumericInput/>`
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-If `onMax` is passed to props, the component will render the max button
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-#### Prop types
+## Learn More
 
-```
-value: string | number
-onUserInput: (input: string) => void
-placeholder?: string
-onMax?: () => void
-inputPadding?: string
-inputWidth?: string
-inputBackground?: string
-inputBorderRadius?: string
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-#### Usage
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```
-import {NumericInput} from 'tech-mask-utils'
+### Code Splitting
 
-const App = () => {
-  return (
-    <>
-     <NumericInput 
-       value={value}
-       onUserInput={setValue}
-       onMax={onMax}
-       placeholder={'enter your value'}
-       // styling
-       inputPadding={'10px'}
-       inputWidth={'10px'}
-       inputBackground={'10px'}
-       inputBorderRadius={'10px'}
-     />
-    </>
-  )
-}
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Hooks:
+### Analyzing the Bundle Size
 
-* `useWeb3Contract(contractInfoObject)`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Returns chainId, web3 object with current provider and getContract() function
+### Making a Progressive Web App
 
-`getContract(contractName: string)`
-takes as its argument the name of the contract in uppercase to be returned
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-The argument object should be as in the example:
+### Advanced Configuration
 
-```
-export const contractInfoObject = {
-  1: {
-    USDT: {
-      address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-      name: 'USDT',
-      abi: usdtAbi
-    }
-  },
-  56: {
-    BUSD: {
-      address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
-      name: 'BUSD',
-      abi: busdAbi
-    }
-  }
-}
-```
-#### Usage
-```
-import {useWeb3Contract} from 'tech-mask-utils'
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-const App = () => {
-const {chainId, web3, getContract} = useWeb3Contract(contractInfoObject)
-const contract = getContract('USDT')
+### Deployment
 
-  return (
-    <></>
-  )
-}
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
