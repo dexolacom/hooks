@@ -51,6 +51,8 @@ addNweTokenInfo('0x0453hj80...', 'USDT', usdtAbi, 1)
   const {publicAddress, privateKey} = createNewWallet()
 ```
 ### Components:
+`import {NumericInput} from 'tech-mask-utils'`
+
 
 `<NumericInput value={value} onUserInput={setValue}/>`
 
