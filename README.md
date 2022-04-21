@@ -43,11 +43,6 @@ networkSwitcher(web3, 56)
 ```
 removeEFromNumber(0.2323e+18) => '232300000000000000'
 ```
-* `addNewTokenInfo(tokenAddress: string, tokenName: string, abi: any, chainId: number)`
-
-```
-addNweTokenInfo('0x0453hj80...', 'USDT', usdtAbi, 1)
-```
 
 * `createNewWallet()` creates new web3 account and returns publicAddress and privateKey
 ```
