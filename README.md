@@ -5,7 +5,7 @@ Metamask extension functions:
 
 Common functions:
 - removeEFromNumber
-- addNewTokenInfo
+- setStyles
 - createNewWallet
 
 Components:
