@@ -1,6 +1,5 @@
 // components
 export { NumericInput } from './components/NumericInput/NumericInput'
-export { InputButton } from './components/NumericInput/NumericInput'
 // hooks
 export { useWeb3Contract } from './hooks/useWeb3Contract'
 // metamask
