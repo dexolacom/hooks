@@ -58,7 +58,7 @@ addNweTokenInfo('0x0453hj80...', 'USDT', usdtAbi, 1)
 
 If `onMax` is passed to props, the component will render the max button
 
-#####Prop types
+####Prop types
 
 ```
 value: string | number
