@@ -31,7 +31,7 @@ export const NumericInput = ({
       <StyledInput
         // main props
         value={value}
-        onChange={(e: { target: { value: string; }; }) => inputValidator(e.target.value)}
+        onChange={(e: { target: { value: string; } }) => inputValidator(e.target.value)}
         inputMode="decimal"
         title="Token Amount"
         autoComplete="off"
@@ -43,15 +43,8 @@ export const NumericInput = ({
         spellCheck="false"
       />
       {onMax && (
-        <InputButton onMax={onMax}/>
+        <MaxButton className='inputMaxButton' onClick={onMax}>Max</MaxButton>
       )}
     </InputWrapper>
   );
-};
-
-
-export const InputButton = ({onMax}: InputButtonProps) => {
-  return (
-    <MaxButton onClick={onMax}>Max</MaxButton>
-  )
 };

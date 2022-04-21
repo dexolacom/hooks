@@ -22,43 +22,59 @@ Hooks:
 To export the newly created function, you must write in index.ts:
 `export {yourFunc} from '../../..'`
 
+To import some function or component:
+`import {} from 'tech-mask-utils'`
+
 ### Metamask functions:
 
-`addTokenToMetamask(web3: any, tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number)`
+* `addTokenToMetamask(web3: any, tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number)`
 tokenSymbol and tokenDecimals is optional parameters
 ```
 addTokenToMetamask(web3, '0xae13d989dac2f0debff460ac112a837c89baa7cd', 'BNB', 18)
 ```
 
-`networkSwitcher(web3, chainId: number)`
+* `networkSwitcher(web3, chainId: number)`
 ```
 networkSwitcher(web3, 56)
 ```
 ### Common functions:
 
-`removeEFromNumber(number: number)`
+* `removeEFromNumber(number: number)`
 ```
 removeEFromNumber(0.2323e+18) => '232300000000000000'
 ```
-`addNewTokenInfo(tokenAddress: string, tokenName: string, abi: any, chainId: number)`
+* `addNewTokenInfo(tokenAddress: string, tokenName: string, abi: any, chainId: number)`
 
 ```
 addNweTokenInfo('0x0453hj80...', 'USDT', usdtAbi, 1)
 ```
 
-`createNewWallet()` creates new web3 account and returns publicAddress and privateKey
+* `createNewWallet()` creates new web3 account and returns publicAddress and privateKey
 ```
-  const {publicAddress, privateKey} = createNewWallet()
+const {publicAddress, privateKey} = createNewWallet()
+```
+
+* `setStyles(styles: object)` uses for set styles to component. In example below this function set styles for input max button
+
+```
+const styles = {
+  inputMaxButton: {
+    background: '#fff',
+    'border-radius': '20px'
+  },
+  'inputMaxButton:hover': {
+    background: '#000'
+  }
+}
+
+setStyles(styles)
 ```
 ### Components:
-`import {NumericInput} from 'tech-mask-utils'`
-
-
-`<NumericInput value={value} onUserInput={setValue}/>`
+* `<NumericInput/>`
 
 If `onMax` is passed to props, the component will render the max button
 
-##### Prop types
+#### Prop types
 
 ```
 value: string | number
@@ -71,16 +87,43 @@ inputBackground?: string
 inputBorderRadius?: string
 ```
 
+#### Usage
+
+```
+import {NumericInput} from 'tech-mask-utils'
+
+const App = () => {
+  return (
+    <>
+     <NumericInput 
+       value={value}
+       onUserInput={setValue}
+       onMax={onMax}
+       placeholder={'enter your value'}
+       // styling
+       inputPadding={'10px'}
+       inputWidth={'10px'}
+       inputBackground={'10px'}
+       inputBorderRadius={'10px'}
+     />
+    </>
+  )
+}
+```
+
 ### Hooks:
 
-`useWeb3Contract(tokensInfoObject)`
+* `useWeb3Contract(contractInfoObject)`
 
 Returns chainId, web3 object with current provider and getContract() function
+
+`getContract(contractName: string)`
+takes as its argument the name of the contract in uppercase to be returned
 
 The argument object should be as in the example:
 
 ```
-export const tokensInfoObject = {
+export const contractInfoObject = {
   1: {
     USDT: {
       address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
@@ -97,14 +140,16 @@ export const tokensInfoObject = {
   }
 }
 ```
-Hook call
+#### Usage
 ```
-const {chainId, web3, getContract} = useWeb3Contract(tokensInfoObject)
-```
+import {useWeb3Contract} from 'tech-mask-utils'
 
-`getContract(contractName: string)`
-takes as its argument the name of the contract in uppercase to be returned
+const App = () => {
+const {chainId, web3, getContract} = useWeb3Contract(contractInfoObject)
+const contract = getContract('USDT')
 
-```
-getContract('USDT') or getContract('BUSD')
+  return (
+    <></>
+  )
+}
 ```

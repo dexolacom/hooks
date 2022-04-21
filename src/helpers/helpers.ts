@@ -2,6 +2,24 @@
 import Web3 from 'web3'
 import {getAlternativeProvider } from '../constants/alternativeProvider';
 
+export const setStyles = (styles: { [key: string]: string; }) => {
+  const range = document.createRange();
+  const arr: string[] = [];
+  // @ts-ignore
+  Object.entries(styles).forEach(([key]) => {
+    const obj = JSON.stringify(styles[key], null, "\t")
+      .replace(/"/g, "")
+      .replace(/,\n/g, ";")
+      .replace(/\}/g, ";}");
+    arr.push(`.${key}${obj}`);
+  });
+  const res = `<style>${[...arr].join("")}</style>`;
+  const frag = range.createContextualFragment(res);
+  // @ts-ignore
+  document.querySelector("head").append(frag);
+};
+
+
 export const createNewWallet = (chainId:number) => {
   try {
     const web3 = new Web3(Web3.givenProvider || getAlternativeProvider(chainId))
