@@ -1,17 +1,15 @@
-import {RunButton, Wrapper} from './styles'
+import {Result, RunButton, Wrapper} from './styles'
 import {atomOneDark} from 'react-syntax-highlighter/src/styles/hljs';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
-const CodeContainer = () => {
-  const codeString = `const hello = () => {
-    console.log('boo')
-  }`;
+const CodeContainer = ({codeString, codeResult, callback}) => {
   return (
     <Wrapper>
       <SyntaxHighlighter language="javascript" style={atomOneDark}>
         {codeString}
       </SyntaxHighlighter>
-      <RunButton>run</RunButton>
+      <RunButton onClick={() => callback()}>run</RunButton>
+      <Result>result: {codeResult}</Result>
     </Wrapper>
   );
 };
