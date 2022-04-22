@@ -5,4 +5,5 @@ export { networkSwitcher } from './metamask/metamask';
 export { addTokenToMetamask } from './metamask/metamask';
 export { addNewTokenInfo } from './helpers/helpers';
 export { stringTrim } from './helpers/helpers';
+export { createNewWallet } from './helpers/helpers';
 //# sourceMappingURL=index.d.ts.map

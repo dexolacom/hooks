@@ -20,4 +20,7 @@ export interface NumericInputProps {
     buttonPadding?: string;
     buttonBorder?: string;
 }
+export declare type InputButtonProps = {
+    onMax: () => void;
+};
 //# sourceMappingURL=types.d.ts.map
