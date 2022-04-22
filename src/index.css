@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ABB2BF;
+  font-size: 16px;
 }
 
 code {
@@ -58,4 +59,8 @@ code {
 
 .subtitle {
   font-size: 22px;
+}
+
+.additionalTitle {
+  font-size: 18px;
 }

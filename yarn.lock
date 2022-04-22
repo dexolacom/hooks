@@ -9709,10 +9709,10 @@ tar@^4.0.2:
     safe-buffer "^5.2.1"
     yallist "^3.1.1"
 
-tech-mask-utils@^1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/tech-mask-utils/-/tech-mask-utils-1.1.8.tgz#4f06e1d9735be2f7b0c3b539c2066f776655d3f0"
-  integrity sha512-VPO6LupgCdVJIItLQfho4xib6LXDiqaxnsB9sMNN8A4vgs+4VF/UR5BJCi+iG3Vk0j5r1/QIUYL2c5jGoyRY7Q==
+tech-mask-utils@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/tech-mask-utils/-/tech-mask-utils-1.1.9.tgz#5f3fe171c324b4c4d904aa22a1823c02d077a74a"
+  integrity sha512-tNH06w0TDqlFQsRVanRrahdfB0KOY4LOMUbfIEKczwhPtQ2SEsRh4lhQ0pS2KadUWIRj8Ha1v5cFPn2nx8qUhg==
 
 temp-dir@^2.0.0:
   version "2.0.0"

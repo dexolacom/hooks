@@ -22,7 +22,11 @@ const CodeContainer = ({codeString, callback, callbackWithReturn, callbackWithMu
   return (
     <>
       <h4 className='subtitle'>
-        <FuncIcon heigth={20} width={20}/> {funcName} ( )
+        {funcName &&
+          <>
+            <FuncIcon heigth={20} width={20}/> {funcName} ( )
+          </>
+        }
       </h4>
       <Wrapper>
         <Content>
