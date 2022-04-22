@@ -14,6 +14,8 @@ Components:
 Hooks:
 - useWeb3Contract
 
+https://techbandorg.github.io/hooks/
+
 ## Installation
 `npm i tech-mask-utils` or `yarn add tech-mask-utils`
 
