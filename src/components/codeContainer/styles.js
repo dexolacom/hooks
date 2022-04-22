@@ -2,10 +2,14 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   padding: 1em;
-  //box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  max-width: 400px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  max-width: fit-content;
   position: relative;
+  background-color:  #282c34;
+`
+
+export const Content = styled.div`
+  padding-top: 10px;
 `
 
 export const RunButton = styled.button`
@@ -30,5 +34,4 @@ export const RunButton = styled.button`
 export const Result = styled.span`
   font-size: 16px;
   color: springgreen;
-  font-weight: 600;
 `

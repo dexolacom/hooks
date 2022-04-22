@@ -15,7 +15,7 @@ code {
 
 .App {
   min-height: 100vh;
-  background-color: #282c34;
+  background-color: #2d303b;
 }
 
 .App-logo {
@@ -46,4 +46,16 @@ code {
 
 .wrapper {
   padding: 2em;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 28px;
+}
+
+.subtitle {
+  font-size: 22px;
 }
