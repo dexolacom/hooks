@@ -1,4 +1,8 @@
 import abi from '../logicAbi.json';
+// @ts-ignore
+import Web3 from 'web3'
+
+const web3 = new Web3(Web3.givenProvider)
 
 export const removeEFromNumber = (number: number) => {
   if (Math.abs(number) < 1) {
@@ -7,7 +11,7 @@ export const removeEFromNumber = (number: number) => {
   return number.toLocaleString('fullwide', {useGrouping: false})
 };
 
-export const networkSwitcher = async (web3: any, chainId: number) => {
+export const networkSwitcher = async (chainId: number) => {
   const hexChainId = `0x${chainId.toString(16)}`
   try {
     // @ts-ignore
@@ -20,7 +24,7 @@ export const networkSwitcher = async (web3: any, chainId: number) => {
   }
 };
 
-export const addTokenToMetamask = async (web3: any, tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number) => {
+export const addTokenToMetamask = async (tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number) => {
   const contract = new web3.eth.Contract(abi as any, tokenAddress)
   if (!tokenSymbol) {
     tokenSymbol = await contract.methods.symbol().call()
