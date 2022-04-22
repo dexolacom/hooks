@@ -29,29 +29,29 @@ To import some function or component:
 
 * `addTokenToMetamask(web3: any, tokenAddress: string, tokenSymbol?: string, tokenDecimals?: number)`
 tokenSymbol and tokenDecimals is optional parameters
-```
+```js
 addTokenToMetamask(web3, '0xae13d989dac2f0debff460ac112a837c89baa7cd', 'BNB', 18)
 ```
 
 * `networkSwitcher(web3, chainId: number)`
-```
+```js
 networkSwitcher(web3, 56)
 ```
 ### Common functions:
 
 * `removeEFromNumber(number: number)`
-```
+```js
 removeEFromNumber(0.2323e+18) => '232300000000000000'
 ```
 
 * `createNewWallet()` creates new web3 account and returns publicAddress and privateKey
-```
+```js
 const {publicAddress, privateKey} = createNewWallet()
 ```
 
 * `setStyles(styles: object)` uses for set styles to component. In example below this function set styles for input max button
 
-```
+```js
 const styles = {
   inputMaxButton: {
     background: '#fff',
@@ -84,7 +84,7 @@ inputBorderRadius?: string
 
 #### Usage
 
-```
+```jsx
 import {NumericInput} from 'tech-mask-utils'
 
 const App = () => {
@@ -117,7 +117,7 @@ takes as its argument the name of the contract in uppercase to be returned
 
 The argument object should be as in the example:
 
-```
+```js
 export const contractInfoObject = {
   1: {
     USDT: {
@@ -136,7 +136,7 @@ export const contractInfoObject = {
 }
 ```
 #### Usage
-```
+```jsx
 import {useWeb3Contract} from 'tech-mask-utils'
 
 const App = () => {
