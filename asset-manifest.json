@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hooks/static/css/main.f434d1fa.css",
+    "main.js": "/hooks/static/js/main.1ea117d3.js",
+    "static/media/logo.svg": "/hooks/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/hooks/index.html",
+    "static/media/lighthing.svg": "/hooks/static/media/lighthing.2f59819363160d2c86f1907b695c577d.svg",
+    "main.f434d1fa.css.map": "/hooks/static/css/main.f434d1fa.css.map",
+    "main.1ea117d3.js.map": "/hooks/static/js/main.1ea117d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f434d1fa.css",
+    "static/js/main.1ea117d3.js"
+  ]
+}
